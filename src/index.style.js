@@ -1,11 +1,10 @@
 import {Dimensions} from "react-native";
 import {useFonts} from "expo-font";
-import {princesssofia,anton,cabin,squadaone,roboto} from "assets";
 
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({
-        princesssofia,anton,cabin,squadaone,roboto
+        
     });
     return loaded;
 }
