@@ -1,9 +1,11 @@
 import {StyleSheet} from "react-native";
+import {vh} from "css";
 
 
 const css=StyleSheet.create({
     app:{
-        flex:1,
+        wdith:"100%",
+        height:100*vh,
         backgroundColor:"#fff",
         alignItems:"center",
         justifyContent:"center",
