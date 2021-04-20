@@ -9,7 +9,7 @@ export const useCustomFonts=()=>{
     return loaded;
 }
 
-export const {height,width}=Dimensions.get("screen");
+export const {height,width}=Dimensions.get("window");
 export const vw=width*0.01;
 export const vh=height*0.01;
 export const rem=3*vw;
