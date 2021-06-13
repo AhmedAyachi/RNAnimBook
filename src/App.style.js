@@ -4,7 +4,7 @@ import {vh} from "css";
 
 const css=StyleSheet.create({
     app:{
-        wdith:"100%",
+        width:"100%",
         height:100*vh,
         backgroundColor:"#fff",
         alignItems:"center",
