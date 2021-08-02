@@ -1,14 +1,14 @@
 import React from "react";
-import {View,Text} from "react-native";
+import {ScrollView,Text} from "react-native";
 import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
 
 
 export default function App(){
     return (
-        <View style={css.app}>
+        <ScrollView contentContainerStyle={css.app} scrollEnabled={false}>
             <Text>App created with create-expo-app command</Text>
             <StatusBar style="auto"/>
-        </View>
+        </ScrollView>
     );
 }
