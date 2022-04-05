@@ -10,7 +10,6 @@ module.exports=function(api) {
                     "routes":"./src/Routes",
                     "estate":"./src/Estate",
                     "css":"./src/index.style.js",
-                    "afile":"./src/ANativeFile.js",
                     "components":"./src/Components",
                 }
             }],
