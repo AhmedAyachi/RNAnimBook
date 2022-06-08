@@ -8,7 +8,7 @@ module.exports=function(api) {
                     "actions":"./src/Store/Actions",
                     "assets":"./src/Assets",
                     "routes":"./src/Routes",
-                    "estate":"./src/Estate",
+                    "resources":"./src/Resources",
                     "css":"./src/index.style.js",
                     "components":"./src/Components",
                 }
