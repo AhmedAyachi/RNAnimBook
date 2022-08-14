@@ -5,14 +5,15 @@ module.exports=function(api) {
         plugins:[
             ["module-resolver",{
                 alias:{
-                    "actions":"./src/Store/Actions",
                     "assets":"./src/Assets",
-                    "routes":"./src/Routes",
-                    "resources":"./src/Resources",
-                    "css":"./src/index.style.js",
                     "components":"./src/Components",
+                    "resources":"./src/Resources",
+                    "routes":"./src/Routes",
+                    "actions":"./src/Store/Actions.js",
+                    "css":"./src/index.style.js",
                 }
             }],
+            "react-native-reanimated/plugin",
         ],
     };
 };

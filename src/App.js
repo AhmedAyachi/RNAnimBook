@@ -1,13 +1,14 @@
 import React from "react";
-import {ScrollView,Text} from "react-native";
+import {ScrollView} from "react-native";
 import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
+import {CounterView,ProgressView} from "components";
 
 
 export default function App(){
     return (
         <ScrollView contentContainerStyle={css.app} scrollEnabled={false}>
-            <Text>App created with create-expo-app command</Text>
+            <ProgressView/>
             <StatusBar style="auto"/>
         </ScrollView>
     );

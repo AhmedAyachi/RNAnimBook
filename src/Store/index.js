@@ -1,8 +1,11 @@
-import {combineReducers} from "redux";
+import {configureStore} from "@reduxjs/toolkit";
+import {CounterSlice} from "./Slices";
 
 
-const Reducer=combineReducers({
-    reducer:()=>({}),
+
+export const store=configureStore({
+    reducer:{
+        counter:CounterSlice.reducer,
+    },
+    devTools:true,
 });
-
-export default Reducer;
