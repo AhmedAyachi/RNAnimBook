@@ -13,7 +13,7 @@ module.exports=function(api) {
                     "css":"./src/index.style.js",
                 }
             }],
-            "react-native-reanimated/plugin",
+            ["react-native-reanimated/plugin",{}],
         ],
     };
 };
