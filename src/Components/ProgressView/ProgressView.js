@@ -5,12 +5,12 @@ import {useSharedValue,useAnimatedStyle,withTiming} from "react-native-reanimate
 
 
 export default function ProgressView(props){
-    const progress=useSharedValue(0);
+    const progress=useSharedValue(20);
     const style=useAnimatedStyle(()=>({
-        width:withTiming(progress.value,{duration:500}),
+        width:progress.value,
     }));
     useEffect(()=>{
-        //progress.value=0;//withTiming(1);
+        progress.value=withTiming(100,{duration:1000});
     });
     return (
         <View style={css.progressview}>
