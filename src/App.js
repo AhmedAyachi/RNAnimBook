@@ -1,15 +1,15 @@
 import React from "react";
-import {ScrollView} from "react-native";
+import {View} from "react-native";
 import css from "./App.style";
 import {StatusBar} from "expo-status-bar";
-import {CounterView,ProgressView,DraggerView} from "components";
+import {ScrollAnimView,DraggerView,ProgressView,CounterView} from "components";
 
 
 export default function App(){
     return (
-        <ScrollView contentContainerStyle={css.app} scrollEnabled={false}>
-            <DraggerView/>
+        <View style={css.app}>
+            <ScrollAnimView/>
             <StatusBar style="auto"/>
-        </ScrollView>
+        </View>
     );
 }

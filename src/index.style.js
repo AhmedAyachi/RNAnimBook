@@ -2,11 +2,12 @@ import {Dimensions} from "react-native";
 import {useFonts} from "expo-font";
 import {useMemo} from "react";
 import {Animated} from "react-native";
+import {dynapuff} from "assets";
 
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({
-        
+        dynapuff
     });
     return loaded;
 }
