@@ -1,5 +1,4 @@
 import React from "react";
-import {} from "react-native";
 import css from "./ScrollAnimView.style";
 import Animated from "react-native-reanimated";
 import ItemView from "./ItemView/ItemView";
