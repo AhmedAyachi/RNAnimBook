@@ -1,5 +1,6 @@
 
 
+export {default as ImageDisplayer} from "./ImageDisplayer/ImageDisplayer";
 export {default as ThemeSwitcher} from "./ThemeSwitcher/ThemeSwitcher";
 export {default as ScrollAnimView} from "./ScrollAnimView/ScrollAnimView";
 export {default as DraggerView} from "./DraggerView/DraggerView";
