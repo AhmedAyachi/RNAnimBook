@@ -6,6 +6,7 @@ const css=StyleSheet.create({
     homescreen:{
         justifyContent:"center",
         alignItems:"center",
+        backgroundColor:"red",
     },
     input:{
         width:20*rem,

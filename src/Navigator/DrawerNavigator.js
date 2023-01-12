@@ -5,7 +5,7 @@ import {DetailScreen,HomeScreen} from "routes";
 
 export default function DrawerNavigator(props){
     return (
-        <Navigator screenOptions={options}>
+        <Navigator screenOptions={getOptions}>
             <Screen name="home" options={{title:"Home"}} component={HomeScreen}/>
             <Screen name="details" options={{title:"Details"}} component={DetailScreen}/>
         </Navigator>
@@ -13,6 +13,6 @@ export default function DrawerNavigator(props){
 }
 
 const {Navigator,Screen}=createDrawerNavigator();
-const options={
-
-}
+const getOptions=()=>({
+    
+});

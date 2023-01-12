@@ -11,7 +11,7 @@ export default function Navigator(){
     return (
         <NavigationContainer>
             <StackNavigator initialRouteName="home" screenOptions={getOptions}>
-                <Screen name="home" component={DrawerNavigator}/>
+                <Screen name="home" options={{headerShown:false}} component={DrawerNavigator}/>
                 <Screen name="about" component={AboutScreen}/>
             </StackNavigator>
         </NavigationContainer>
@@ -21,7 +21,6 @@ export default function Navigator(){
 const {Navigator:StackNavigator,Screen}=createStackNavigator();
 const getOptions=({route:{name}})=>({
     headerTitle:`${name[0].toUpperCase()}${name.substring(1)}`,
-    headerShown:false,
     headerStyle:{
         backgroundColor,
     },
