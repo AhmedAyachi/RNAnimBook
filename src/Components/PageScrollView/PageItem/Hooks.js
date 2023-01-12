@@ -13,11 +13,12 @@ export const useScrollStyle=({scrollLeft,index})=>{
         borderRadius:interpolate(scrollLeft.value,inputrange,[25,radius,25],Extrapolate.CLAMP),
         transform:[
             {scale:interpolate(scrollLeft.value,inputrange,[0,1,0],Extrapolate.CLAMP)},
-            //{rotateZ:`${interpolate(scrollLeft.value,inputrange,[+Math.PI/2,0,-Math.PI/2])}rad`},
+            {rotateZ:`${interpolate(scrollLeft.value,inputrange,[+Math.PI/2,0,-Math.PI/2])}rad`},
         ],
     }),[]);
     const title=useAnimatedStyle(()=>({
-        transform:[{translateY:interpolate(scrollLeft.value,inputrange,[height/2,0,-height/2])}],
+        opacity:interpolate(scrollLeft.value,inputrange,[-1,1,-1]),
+        transform:[{translateY:interpolate(scrollLeft.value,inputrange,[height/2,0,-height/2],Extrapolate.CLAMP)}],
     }));
     return {container,title};
 };
