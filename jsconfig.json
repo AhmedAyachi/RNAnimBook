@@ -1,0 +1,13 @@
+{
+    "compilerOptions":{
+        "baseUrl":"./src/",
+        "paths":{
+            "assets":["./Assets"],
+            "components":["./Components"],
+            "resources":["./Resources"],
+            "routes":["./Routes"],
+            "actions":["./Store/Actions.js"],
+            "css":["./index.style.js"]
+        }
+    }
+}

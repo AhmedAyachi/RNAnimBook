@@ -7,7 +7,7 @@ import * as H from "./Hooks";
 
 
 export default function DraggerView(props){
-    const {handler,style}=H.useDrag();
+    const {handler,style}=H.useDragGesture();
     return (
         <GestureHandlerRootView>
             <View style={css.draggerview}>
