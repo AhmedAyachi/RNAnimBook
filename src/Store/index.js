@@ -4,6 +4,6 @@ import {} from "./Slices";
 
 
 export const store=configureStore({
-    reducer:{},
+    reducer:()=>null,
     devTools:true,
 });

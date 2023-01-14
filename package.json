@@ -2,7 +2,7 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "expo start",
-    "restart": "expo r -c",
+    "restart": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
