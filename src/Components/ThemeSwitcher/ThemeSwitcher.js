@@ -1,27 +1,37 @@
-import React,{useEffect,useState} from "react";
-//import {View} from"react-native";
+import React,{useRef,useState} from "react";
+import {Switch} from "react-native";
 import css from "./ThemeSwitcher.style";
-import Animated,{withTiming} from "react-native-reanimated";
+import Animated from "react-native-reanimated";
 import * as H from "./Hooks";
 
 
 export default function ThemeSwitcher(props){
-    const [islight,setIsLight]=useState(true);
-    const [transx,animstyle]=H.useAnimStyles();
-    useEffect(()=>{
-        transx.value=withTiming(islight?0:css.indicator.width);
-    },[islight]);
+    const {}=props;
+    const [theme,setTheme]=useState(statics.light);
+    const {style}=H.useThemeTransition(theme);
     return (
-        <Animated.View style={[css.themeswitcher,animstyle.themeswitcher]}>
-            <Animated.Text style={[css.title,animstyle.title]}>theme</Animated.Text>
-            <Animated.View style={[css.disc,animstyle.disc]}>
-                <Animated.View 
-                    style={[css.switcher,animstyle.switcher]}
-                    onTouchStart={()=>{setIsLight(!islight)}}
-                >
-                    <Animated.View style={[css.indicator,animstyle.indicator]}/>
-                </Animated.View>
-            </Animated.View>
+        <Animated.View style={[css.themeswitcher,style.themeswitcher]}>
+            <Animated.Text style={[css.title,style.title]}>theme</Animated.Text>
+            <Switch 
+                value={theme===statics.dark} 
+                thumbColor={theme.thumbColor}
+                trackColor={theme.thumbColor}
+                onValueChange={(value)=>{
+                    const key=theme===statics.light?"dark":"light";
+                    setTheme(statics[key]);
+                }}
+            />
         </Animated.View>
     )
+}
+
+const statics=ThemeSwitcher.statics={
+    dark:{
+        backgroundColor:"black",
+        thumbColor:"violet",
+    },
+    light:{
+        backgroundColor:"white",
+        thumbColor:"dodgerblue",
+    },
 }
