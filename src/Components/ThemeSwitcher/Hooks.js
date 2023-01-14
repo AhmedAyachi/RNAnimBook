@@ -1,25 +1,24 @@
-import {useSharedValue,useAnimatedStyle,interpolateColor} from "react-native-reanimated";
-import css from "./ThemeSwitcher.style";
+import {useEffect,useRef} from "react";
+import ThemeSwitcher from "./ThemeSwitcher";
+import {interpolateColor,useAnimatedStyle,useSharedValue,withTiming} from "react-native-reanimated";
 
 
-export const useAnimStyles=()=>{
-    const transx=useSharedValue(0);
-    const inrange=[0,css.indicator.width];
-    return [transx,{
-        themeswitcher:useAnimatedStyle(()=>({
-            backgroundColor:interpolateColor(transx.value,inrange,["white","#1e1d1e"]),
-        })),
-        title:useAnimatedStyle(()=>({
-            color:interpolateColor(transx.value,inrange,["black","white"]),
-        })),
-        disc:useAnimatedStyle(()=>({
-            backgroundColor:interpolateColor(transx.value,inrange,["white","#252426"]),
-        })),
-        switcher:useAnimatedStyle(()=>({
-            backgroundColor:interpolateColor(transx.value,inrange,["#e5e9e2","#5a345e"]),
-        })),
-        indicator:useAnimatedStyle(()=>({
-            transform:[{translateX:transx.value}],
-        })),
-    }];
+export const useThemeTransition=(theme)=>{
+    const state=useRef({
+        prevtheme:ThemeSwitcher.statics.light,
+    }).current,{prevtheme}=state;
+    const transition=useSharedValue(theme===prevtheme?1:0);
+    const colors=[prevtheme.backgroundColor,theme.backgroundColor];
+    const themeswitcher=useAnimatedStyle(()=>({
+        backgroundColor:interpolateColor(transition.value,inputrange,colors),
+    }),[theme]);
+    const title=useAnimatedStyle(()=>({
+        color:interpolateColor(transition.value,inputrange,colors.reverse()),
+    }),[theme]);
+    useEffect(()=>{
+        state.prevtheme=theme;
+        transition.value=withTiming(inputrange[theme===prevtheme?0:1],{duration:500});
+    },[theme]);
+    return {transition,style:{themeswitcher,title}};
 }
+const inputrange=[0,1];

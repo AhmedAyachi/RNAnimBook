@@ -5,7 +5,7 @@ import Navigator from "./Navigator/Navigator";
 
 export default function App(){
     return <>
-        <StatusBar translucent={true}/>
+        <StatusBar translucent style="auto"/>
         <Navigator/>
     </>;
 }

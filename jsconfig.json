@@ -2,12 +2,12 @@
     "compilerOptions":{
         "baseUrl":"./src/",
         "paths":{
-            "assets":["./Assets"],
-            "components":["./Components"],
-            "resources":["./Resources"],
-            "routes":["./Routes"],
-            "actions":["./Store/Actions.js"],
-            "css":["./index.style.js"]
+            "assets":["./src/Assets"],
+            "components":["./src/Components"],
+            "resources":["./src/Resources"],
+            "actions":["./src/Store/Actions.js"],
+            "routes":["./src/Routes"],
+            "css":["./src/index.style.js"],   
         }
     }
 }

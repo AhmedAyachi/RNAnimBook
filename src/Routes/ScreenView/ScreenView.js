@@ -4,10 +4,9 @@ import css from "./ScreenView.style"
 
 
 export default function ScreenView(props){
-    console.log(props.children);
     return (
         <TouchableWithoutFeedback onPress={()=>{Keyboard.dismiss()}}>
-            <View {...props} style={[css.screenview,props.style]}/>
+            <View {...props} style={[css.screenview,props.style]}>{props.children}</View>
         </TouchableWithoutFeedback>
     )
 }
