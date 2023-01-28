@@ -9,11 +9,12 @@ const css=StyleSheet.create({
         justifyContent:"center",
         alignItems:"stretch",
         borderRadius:8*rem,
-        overflow:"hidden",
+        //overflow:"hidden",
     },
     gradient:{
         width:"100%",
         height:"100%",
+        borderRadius:8*rem,
     },
 });
 

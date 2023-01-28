@@ -1,31 +1,27 @@
 import React from "react";
 import {} from "react-native";
 import css from "./PinView.style";
-import {PanGestureHandler} from "react-native-gesture-handler";
-import Animated,{useAnimatedStyle,useSharedValue,useAnimatedGestureHandler,runOnJS} from "react-native-reanimated";
+import Animated,{useAnimatedStyle,interpolateColor} from "react-native-reanimated";
 
 
 export default function PinView(props){
-    const {translateX}=props;
-    const panHandler=useAnimatedGestureHandler({
-        onStart:()=>{},
-        onActive:(event,context)=>{
-            translateX.value=(context.x||0)+event.translationX;
-        },
-        onEnd:(_,context)=>{
-            context.x=translateX.value;
-        },
-    });
+    const {translateX,translateY,inrange}=props;
     return (
-        <PanGestureHandler onGestureEvent={panHandler}>
-            <Animated.View 
-                style={[
-                    css.pinview,
-                    useAnimatedStyle(()=>({
-                        transform:[{translateX:translateX.value}],
-                    })),
-                ]}
-            />
-        </PanGestureHandler>
+        <Animated.View
+            style={[
+                css.pinview,
+                useAnimatedStyle(()=>inrange?({
+                    backgroundColor:interpolateColor(translateX.value,inrange,statics.colors),
+                    transform:[
+                        {translateX:translateX.value},
+                        {translateY:translateY.value},
+                    ],
+                }):{}),
+            ]}
+        />
     )
+}
+
+const statics=PinView.statics={
+    colors:["red","purple","blue","cyan","green","yellow","orange","black","white"],
 }

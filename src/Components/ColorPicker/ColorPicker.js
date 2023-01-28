@@ -8,22 +8,21 @@ import Animated,{interpolateColor,useAnimatedStyle,useSharedValue} from "react-n
 export default function ColorPicker(props){
     const {}=props;
     const translateX=useSharedValue(0);
-    const [width,setWidth]=useState();
+    const [inrange,setInRange]=useState();
     return (
         <View style={[css.colorpicker,props.style]}>
             <Animated.View 
                 style={[
                     css.colorview,
-                    useAnimatedStyle(()=>width?{
-                        backgroundColor:interpolateColor(translateX.value,statics.colors.map((_,i,{length})=>i*(width/length)),statics.colors),
+                    useAnimatedStyle(()=>inrange?{
+                        backgroundColor:interpolateColor(translateX.value,inrange,statics.colors),
                     }:{}),
                 ]}
             />
             <ColorSlider
                 translateX={translateX}
-                onLayout={({nativeEvent:{layout:{width}}})=>{
-                    setWidth(width);
-                }}
+                inrange={inrange}
+                setInRange={setInRange}
             />
         </View>
     )
