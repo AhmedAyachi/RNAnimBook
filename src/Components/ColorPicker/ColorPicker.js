@@ -1,21 +1,34 @@
-import React,{useRef} from "react";
+import React,{useState} from "react";
 import {View} from "react-native";
 import css from "./ColorPicker.style";
 import ColorSlider from "./ColorSlider/ColorSlider";
-import Animated from "react-native-reanimated";
+import Animated,{interpolateColor,useAnimatedStyle,useSharedValue} from "react-native-reanimated";
 
 
 export default function ColorPicker(props){
     const {}=props;
-    const colorviewref=useRef();
+    const translateX=useSharedValue(0);
+    const [width,setWidth]=useState();
     return (
         <View style={[css.colorpicker,props.style]}>
-            <Animated.View ref={colorviewref} style={css.colorview}/>
+            <Animated.View 
+                style={[
+                    css.colorview,
+                    useAnimatedStyle(()=>width?{
+                        backgroundColor:interpolateColor(translateX.value,statics.colors.map((_,i,{length})=>i*(width/length)),statics.colors),
+                    }:{}),
+                ]}
+            />
             <ColorSlider
-                onColorChange={(color)=>{
-                    colorviewref.current.setNativeProps({style:{backgroundColor:color}});
+                translateX={translateX}
+                onLayout={({nativeEvent:{layout:{width}}})=>{
+                    setWidth(width);
                 }}
             />
         </View>
     )
+}
+
+const statics={
+    ...ColorSlider.statics,
 }

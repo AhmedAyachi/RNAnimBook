@@ -8,19 +8,12 @@ import {LinearGradient} from "expo-linear-gradient";
 
 
 export default function ColorSlider(props){
-    const {onColorChange}=props;
-    const state=useRef({width:null}).current;
+    const {translateX}=props;
+    
     return (
         <GestureHandlerRootView style={css.colorslider}>
-            <Animated.View style={css.colorslider} onLayout={({nativeEvent:{layout:{width}}})=>{
-                state.width=width;
-            }}>
-                <PinView
-                    onMove={(x)=>{
-                        const color=interpolateColor(x.value,statics.colors.map((_,i,{length})=>i*(state.width/length)),statics.colors);
-                        onColorChange&&onColorChange(color);
-                    }}
-                />
+            <Animated.View style={css.colorslider} onLayout={props.onLayout}>
+                <PinView translateX={translateX}/>
                 <LinearGradient 
                     style={css.gradient} 
                     colors={statics.colors}
@@ -32,6 +25,6 @@ export default function ColorSlider(props){
     )
 }
 
-const statics={
-    ...PinView.statics,
+const statics=ColorSlider.statics={
+    colors:["red","purple","blue","cyan","green","yellow","orange","black","white"],
 };

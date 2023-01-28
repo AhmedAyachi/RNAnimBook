@@ -6,13 +6,11 @@ import Animated,{useAnimatedStyle,useSharedValue,useAnimatedGestureHandler,runOn
 
 
 export default function PinView(props){
-    const {onMove}=props;
-    const translateX=useSharedValue(0);
+    const {translateX}=props;
     const panHandler=useAnimatedGestureHandler({
         onStart:()=>{},
         onActive:(event,context)=>{
             translateX.value=(context.x||0)+event.translationX;
-            onMove&&runOnJS(onMove)(translateX);
         },
         onEnd:(_,context)=>{
             context.x=translateX.value;
@@ -31,7 +29,3 @@ export default function PinView(props){
         </PanGestureHandler>
     )
 }
-
-const statics=PinView.statics={
-    colors:["red","purple","blue","cyan","green","yellow","orange","black","white"],
-};
