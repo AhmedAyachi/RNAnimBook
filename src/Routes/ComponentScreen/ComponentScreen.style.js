@@ -1,10 +1,11 @@
 import {StyleSheet} from "react-native";
-import {rem} from "css";
+import {rem,backgroundColor} from "css";
 
 
 const css=StyleSheet.create({
     componentscreen:{
         justifyContent:"center",
+        backgroundColor,
     },
     component:{
         maxWidth:"100%",
@@ -22,7 +23,7 @@ const css=StyleSheet.create({
         alignItems:"stretch",
         paddingHorizontal:2*rem,
     },
-    draggerview:{
+    prisonerview:{
         flex:0,
         alignSelf:"center",
     }

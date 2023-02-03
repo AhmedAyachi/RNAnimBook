@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {border,rem} from "css";
+import {border,backgroundColor,rem} from "css";
 
 
 const css=StyleSheet.create({
@@ -10,7 +10,7 @@ const css=StyleSheet.create({
     content:{
         width:"100%",
         flex:1,
-        paddingHorizontal:2*rem,
+        backgroundColor,
     },
 });
 

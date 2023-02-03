@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,vw} from "css";
+import {rem,vw,mainColor,backgroundColor} from "css";
 
 
 const css=StyleSheet.create({
@@ -12,7 +12,7 @@ const css=StyleSheet.create({
     container:{
         width:70*vw,
         height:70*vw,
-        backgroundColor:"rgba(0,0,256,0.4)",
+        backgroundColor:mainColor,
         justifyContent:"center",
         alignItems:"center",
     },
@@ -21,7 +21,7 @@ const css=StyleSheet.create({
         fontSize:3.5*rem,
         fontWeight:"500",
         textTransform:"capitalize",
-        color:"white",
+        color:backgroundColor,
     },
 });
 

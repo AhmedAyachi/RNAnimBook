@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import {useSharedValue,useAnimatedGestureHandler,useAnimatedStyle,withSpring} from "react-native-reanimated";
-import css from "./DraggerView.style";
+import css from "./PrisonerView.style";
 
 
 export const useDragGesture=()=>{
@@ -32,4 +32,4 @@ export const useDragGesture=()=>{
     return {handler,style};
 };
 
-const max=(css.draggerview.width-css.dragger.width)/2;
+const max=(css.prisonerview.width-css.prisoner.width)/2;

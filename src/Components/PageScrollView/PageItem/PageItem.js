@@ -18,6 +18,6 @@ export default function PageItem(props){
 
 const styles={
     pageitem:(i)=>({
-        backgroundColor:`rgba(0,0,256,0.${i+2})`,
+        backgroundColor:`rgba(255,141,30,0.${i+2})`,
     }),
 }

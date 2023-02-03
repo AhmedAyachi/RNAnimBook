@@ -1,18 +1,18 @@
 import React from "react";
 import {View} from "react-native";
-import css from "./DraggerView.style";
+import css from "./PrisonerView.style";
 import Animated from "react-native-reanimated";
 import {PanGestureHandler,GestureHandlerRootView} from "react-native-gesture-handler";
 import * as H from "./Hooks";
 
 
-export default function DraggerView(props){
+export default function PrisonerView(props){
     const {handler,style}=H.useDragGesture();
     return (
         <GestureHandlerRootView>
-            <View style={[css.draggerview,props.style]}>
+            <View style={[css.prisonerview,props.style]}>
                 <PanGestureHandler onGestureEvent={handler}>
-                    <Animated.View style={[css.dragger,style]}/>
+                    <Animated.View style={[css.prisoner,style]}/>
                 </PanGestureHandler>
             </View>
         </GestureHandlerRootView>

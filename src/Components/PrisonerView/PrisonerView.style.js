@@ -1,25 +1,25 @@
 import {StyleSheet} from "react-native";
-import {rem,border,inset} from "css";
+import {rem,border,mainColor,minorColor} from "css";
  
 
 const {radius,coef}={
     radius:15*rem,
-    coef:2.5,
+    coef:3.5,
 },css=StyleSheet.create({
-    draggerview:{
+    prisonerview:{
         width:radius*2,
         height:radius*2,
         justifyContent:"center",
         alignItems:"center",
         borderRadius:radius,
-        ...border(0.2*rem,"solid","red"),
+        ...border(0.2*rem,"solid",minorColor),
     },
-    dragger:{
+    prisoner:{
         position:"absolute",
         width:radius/coef,
         height:radius/coef,
-        borderRadius:0.5*rem,
-        backgroundColor:"red",
+        borderRadius:radius,
+        backgroundColor:mainColor,
     },
 });
 

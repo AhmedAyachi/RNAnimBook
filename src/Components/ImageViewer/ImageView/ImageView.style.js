@@ -6,14 +6,12 @@ const css=StyleSheet.create({
     imageview:{
         width:100*vw,
         height:205,
-        //...border(1,"solid","red"),
     },
     imgwrapper:{
         width:"100%",
         height:"100%",
         justifyContent:"center",
         alignItems:"center",
-        //backgroundColor:"blue",
     },
     image:{
         width:"100%",
@@ -23,7 +21,6 @@ const css=StyleSheet.create({
         position:"absolute",
         width:"100%",
         height:"100%",
-        //backgroundColor:"red",
     },
 });
 
