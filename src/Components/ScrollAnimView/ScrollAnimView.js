@@ -9,7 +9,7 @@ export default function ScrollAnimView(props){
     const {scrollhandler,scrollLeft}=H.useScrollAnim();
     return (
         <Animated.FlatList 
-            style={css.scrollanimview} 
+            style={[css.scrollanimview,props.style]} 
             horizontal={true} pagingEnabled={true}
             data={"ahmed".split("")}
             onScroll={scrollhandler}

@@ -10,7 +10,7 @@ export default function DraggerView(props){
     const {handler,style}=H.useDragGesture();
     return (
         <GestureHandlerRootView>
-            <View style={css.draggerview}>
+            <View style={[css.draggerview,props.style]}>
                 <PanGestureHandler onGestureEvent={handler}>
                     <Animated.View style={[css.dragger,style]}/>
                 </PanGestureHandler>
