@@ -16,12 +16,12 @@ export default function ZooBook(){
                 images={illucards.map(illucard=>illucard.image)} 
             />
             <Animated.FlatList
-                contentContainerStyle={[css.cardslist,{paddingHorizontal:sharedState.spacerwidth}]}
+                contentContainerStyle={[css.cardslist,{paddingHorizontal:statics.spacerwidth}]}
                 showsHorizontalScrollIndicator={false}
                 horizontal
-                snapToInterval={sharedState.illucardoffsetwidth}
-                decelerationRate="fast"
-                snapToAlignment="center"
+                snapToInterval={statics.illucardoffsetwidth}
+                decelerationRate={0}
+                snapToAlignment="start"
                 disableIntervalMomentum={true}
                 bounces={false}
                 onScroll={Animated.event([{nativeEvent:{contentOffset:{x:scrollX}}}],{useNativeDriver:false})}
@@ -39,9 +39,9 @@ const styles={
     illbackdrop:(scrollX,i)=>({
         width:scrollX.interpolate({
             inputRange:[
-                (i-1)*sharedState.illucardoffsetwidth,
-                i*sharedState.illucardoffsetwidth,
-                (i+1)*sharedState.illucardoffsetwidth,
+                (i-1)*statics.illucardoffsetwidth,
+                i*statics.illucardoffsetwidth,
+                (i+1)*statics.illucardoffsetwidth,
             ],
             outputRange:["100%","100%","0%"],
             extrapolate:"clamp",
@@ -50,9 +50,9 @@ const styles={
     illucard:(scrollX,i)=>({
         transform:[{translateY:scrollX.interpolate({
             inputRange:[
-                (i-1)*sharedState.illucardoffsetwidth,
-                i*sharedState.illucardoffsetwidth,
-                (i+1)*sharedState.illucardoffsetwidth,
+                (i-1)*statics.illucardoffsetwidth,
+                i*statics.illucardoffsetwidth,
+                (i+1)*statics.illucardoffsetwidth,
             ],
             outputRange:[0,-70,0],
             extrapolate:"clamp",
@@ -60,7 +60,7 @@ const styles={
     }),
 }
 
-const sharedState=new function(){
+const statics=new function(){
     this.illucardwidth=css.illucard.width;
     this.illucardoffsetwidth=(this.illucardwidth+css.illucard.marginHorizontal*2)-0.07*vw;
     this.spacerwidth=(100*vw-this.illucardoffsetwidth)/2;

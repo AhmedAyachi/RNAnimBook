@@ -4,9 +4,9 @@ import css from "./IlluCard.style";
 
 
 export default function IlluCard(props){
-    const {card:{title,image},style}=props;
+    const {card:{title,image}}=props;
     return (
-        <Animated.View style={[css.illucard,style]}>
+        <Animated.View style={[css.illucard,props.style]}>
             <View style={css.row0}>
                 <Image style={css.image} source={image}/>
             </View>
