@@ -10,6 +10,7 @@ const css=StyleSheet.create({
     },
     flatlist:{
         width:"100%",
+        height:"100%",
     },
     container:{
         justifyContent:"center",

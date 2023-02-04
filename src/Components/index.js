@@ -1,5 +1,6 @@
 
 
+export {default as BandExplorer} from "./BandExplorer/BandExplorer";
 export {default as TimerView} from "./TimerView/TimerView";
 export {default as PageScrollView} from "./PageScrollView/PageScrollView";
 export {default as ScrollAnimView} from "./ScrollAnimView/ScrollAnimView";
