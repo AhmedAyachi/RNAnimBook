@@ -1,6 +1,6 @@
 import {Dimensions} from "react-native";
 import {useFonts} from "expo-font";
-import {squadaone,dynapuff,cabin,anton} from "assets";
+import {princesssofia,squadaone,dynapuff,cabin,anton} from "assets";
 
 
 export const mainFont="";
@@ -10,7 +10,7 @@ export const backgroundColor="white";
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({
-        squadaone,dynapuff,cabin,anton,
+        princesssofia,squadaone,dynapuff,cabin,anton,
     });
     return loaded;
 }

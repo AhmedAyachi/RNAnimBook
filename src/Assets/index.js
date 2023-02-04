@@ -4,8 +4,16 @@ export {default as dynapuff} from "./Fonts/DynaPuff.ttf";
 export {default as cabin} from "./Fonts/Cabin-Regular.ttf";
 export {default as anton} from "./Fonts/Anton-Regular.ttf";
 export {default as squadaone} from "./Fonts/SquadaOne-Regular.ttf";
+export {default as princesssofia} from "./Fonts/PrincessSofia-Regular.ttf";
 
 //Images:
+export {default as perrot0} from "./Images/Perrot_0.png";
+export {default as bovid0} from "./Images/Bovid_0.png";
+export {default as cat0} from "./Images/Cat_0.png";
+export {default as horse0} from "./Images/Horse_0.png";
+export {default as owl0} from "./Images/Owl_0.png";
+export {default as eagle0} from "./Images/Eagle_0.png";
+export {default as snake0} from "./Images/Snake_0.png";
 export {default as diewoord0} from "./Images/DieWoord_0.png";
 export {default as worldsaxophone0} from "./Images/WorldSaxophoneQuartet_0.jpg";
 export {default as yearsnadyears0} from "./Images/YearsAndYears_0.jpeg";
