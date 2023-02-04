@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border} from "css";
+import {rem,border,mainColor} from "css";
 
 
 const css=StyleSheet.create({
@@ -12,7 +12,7 @@ const css=StyleSheet.create({
         alignItems:"center",
         padding:1*rem,
         borderRadius:1*rem,
-        backgroundColor:"red",
+        backgroundColor:mainColor,
     },
     buttons:{
         flexDirection:"row",

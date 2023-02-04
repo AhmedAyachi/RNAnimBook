@@ -4,12 +4,13 @@ import {dynapuff} from "assets";
 
 
 export const mainFont="";
-export const mainColor="black";
+export const mainColor="#1E90FF";
+export const minorColor="#FF8D1E";
 export const backgroundColor="white";
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({
-        dynapuff
+        dynapuff,
     });
     return loaded;
 }

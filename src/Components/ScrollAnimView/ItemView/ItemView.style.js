@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,vw} from "css";
+import {rem,vw,mainColor,minorColor,backgroundColor} from "css";
 
 
 const css=Object.assign(StyleSheet.create({
@@ -18,10 +18,10 @@ const css=Object.assign(StyleSheet.create({
         fontFamily:"dynapuff",
         fontSize:20*rem,
         textTransform:"capitalize",
-        color:"rgba(0,0,0,0.35)",
+        color:backgroundColor,
     },
 }),{
-    colors:["red","purple"],
+    colors:[mainColor,minorColor],
 });
 
 export default css;

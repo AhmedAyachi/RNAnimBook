@@ -1,24 +1,24 @@
-import {useEffect,useRef} from "react";
-import ThemeSwitcher from "./ThemeSwitcher";
-import {interpolateColor,useAnimatedStyle,useSharedValue,withTiming} from "react-native-reanimated";
+import {useState,useCallback} from "react";
+import {interpolateColor,useAnimatedStyle,useDerivedValue,withTiming,useSharedValue} from "react-native-reanimated";
 
 
-export const useThemeTransition=(theme)=>{
-    const state=useRef({
-        prevtheme:ThemeSwitcher.statics.light,
-    }).current,{prevtheme}=state;
-    const transition=useSharedValue(theme===prevtheme?1:0);
-    const colors=[prevtheme.backgroundColor,theme.backgroundColor];
-    const themeswitcher=useAnimatedStyle(()=>({
-        backgroundColor:interpolateColor(transition.value,inputrange,colors),
-    }),[theme]);
-    const title=useAnimatedStyle(()=>({
-        color:interpolateColor(transition.value,inputrange,colors.reverse()),
-    }),[theme]);
-    useEffect(()=>{
-        state.prevtheme=theme;
-        transition.value=withTiming(inputrange[theme===prevtheme?0:1],{duration:500});
-    },[theme]);
-    return {transition,style:{themeswitcher,title}};
-}
+const backgroundColors=["white","black"],textColors=[...backgroundColors].reverse();
 const inputrange=[0,1];
+export const useThemeTransition=()=>{
+    const [isdark,setIsDark]=useState(false);
+    const transition=useDerivedValue(()=>withTiming(inputrange[isdark?1:0]),[isdark]);//useSharedValue(inputrange[isdark?1:0]);
+    const themeswitcher=useAnimatedStyle(()=>({
+        backgroundColor:interpolateColor(transition.value,inputrange,backgroundColors),
+    }),[isdark]);
+    const title=useAnimatedStyle(()=>({
+        color:interpolateColor(transition.value,inputrange,textColors),
+    }),[isdark]);
+    const toggleTheme=useCallback((isdark)=>{
+        //transition.value=withTiming(inputrange[isdark?1:0]);
+        setIsDark(isdark);
+    },[isdark]);
+    return {
+        isdark,toggleTheme,
+        style:{themeswitcher,title},
+    };
+}

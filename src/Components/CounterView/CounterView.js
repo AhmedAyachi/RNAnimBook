@@ -9,7 +9,7 @@ export default function CounterView(props){
     const {value}=useSelector(store=>store.counter);
     const dispatch=useDispatch();
     return (
-        <View style={css.counterview}>
+        <View style={[css.counterview,props.style]}>
             <View style={css.view}>
                 <Text style={css.text}>count : {value}</Text>
             </View>

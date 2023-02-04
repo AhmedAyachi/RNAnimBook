@@ -10,7 +10,7 @@ export default function ProgressView(props){
         progress.value=withRepeat(withTiming(1,{duration:4000}),0,true);
     });
     return (
-        <View style={css.progressview}>
+        <View style={[css.progressview,props.style]}>
             <Animated.View style={[css.progressbar,useAnimatedStyle(()=>({width:`${progress.value*100}%`}))]}/>
         </View>
     )
