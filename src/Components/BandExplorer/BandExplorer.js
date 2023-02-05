@@ -15,7 +15,7 @@ export default function BandExplorer(props){
         <View 
             style={[css.bandexplorer,props.style]}
             onLayout={({nativeEvent:{layout:{width,height}}})=>{
-                setDimensions({width:width-css.bandexplorer.borderWidth*2,height});
+                setDimensions({width:width,height});
             }}
         >
             {dimensions?bands.map((band,i)=>

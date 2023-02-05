@@ -7,7 +7,6 @@ const css=StyleSheet.create({
         width:"100%",
         flex:1,
         backgroundColor:"#161726",
-        borderWidth:1,
     },
     background:{
         position:"absolute",
