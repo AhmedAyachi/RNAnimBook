@@ -1,6 +1,6 @@
 import React from "react";
 import {createDrawerNavigator} from "@react-navigation/drawer";
-import {AboutScreen,ComponentScreen,HomeScreen} from "routes";
+import {AboutScreen,ComponentScreen,HomeScreen} from "screens";
 import * as components from "components";
 import {backgroundColor} from "css";
 

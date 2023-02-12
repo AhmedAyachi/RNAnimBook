@@ -9,7 +9,7 @@ module.exports=function(api) {
                     "components":"./src/Components",
                     "resources":"./src/Resources",
                     "actions":"./src/Store/Actions.js",
-                    "routes":"./src/Routes",
+                    "screens":"./src/Screens",
                     "css":"./src/index.style.js",   
                 }
             }],

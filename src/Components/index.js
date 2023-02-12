@@ -1,5 +1,6 @@
 
 
+export {default as CheckList} from "./CheckList/CheckList";
 export {default as ZooBook} from "./ZooBook/ZooBook";
 export {default as BandExplorer} from "./BandExplorer/BandExplorer";
 export {default as TimerView} from "./TimerView/TimerView";
