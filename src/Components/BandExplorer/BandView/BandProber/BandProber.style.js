@@ -7,10 +7,10 @@ const css={...StyleSheet.create({
         position:"absolute",
         width:"100%",
         height:25*vh,
-        left:0,
-        bottom:0,
         justifyContent:"flex-start",
         alignItems:"center",
+        left:0,
+        bottom:0,
     },
     row0:{
         width:"100%",

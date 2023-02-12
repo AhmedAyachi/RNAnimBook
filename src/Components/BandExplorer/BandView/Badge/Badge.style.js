@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border} from "css";
+import {rem,mainColor} from "css";
 
 
 const css={...StyleSheet.create({
@@ -16,7 +16,7 @@ const css={...StyleSheet.create({
         bottom:0,
         alignSelf:"center",
         opacity:0.5,
-        backgroundColor:"#532d6f",
+        backgroundColor:mainColor,
         zIndex:0,
     },
     content:{

@@ -7,8 +7,8 @@ const css=StyleSheet.create({
         height:"100%",
         justifyContent:"flex-end",
         alignItems:"center",
-        overflow:"hidden",
         paddingTop:2*rem,
+        overflow:"hidden",
     },
     content:{
         width:"100%",

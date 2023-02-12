@@ -3,10 +3,10 @@ import {useFonts} from "expo-font";
 import {princesssofia,squadaone,dynapuff,cabin,anton} from "assets";
 
 
-export const mainFont="";
-export const mainColor="#1E90FF";
-export const minorColor="#FF8D1E";
-export const backgroundColor="white";
+export const mainFont="cabin";
+export const mainColor="#532d6f";
+export const majorColor="#161726";
+export const backgroundColor="#ddd9ff";
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({

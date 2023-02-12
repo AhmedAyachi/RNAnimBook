@@ -11,6 +11,9 @@ const css=StyleSheet.create({
         maxWidth:"100%",
         flex:1,
     },
+    checklist:{
+        marginTop:2*rem,
+    },
     colorpicker:{
         paddingHorizontal:2*rem,
     },

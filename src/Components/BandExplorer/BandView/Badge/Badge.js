@@ -2,7 +2,7 @@ import React from "react";
 import {View,Text,Animated,TouchableWithoutFeedback as TWF} from "react-native";
 import css from "./Badge.style";
 import {FontAwesome} from "@expo/vector-icons"; 
-import {vh} from "css";
+import {vh,mainColor,majorColor} from "css";
 import * as H from "./Hooks";
 
 
@@ -43,7 +43,7 @@ const styles={
         height,
         backgroundColor:height.interpolate({
             inputRange:[height._value,containerHeight],
-            outputRange:["#532d6f","#161726"],
+            outputRange:[mainColor,majorColor],
         }),
         opacity:height.interpolate({
             inputRange:[height._value,containerHeight],

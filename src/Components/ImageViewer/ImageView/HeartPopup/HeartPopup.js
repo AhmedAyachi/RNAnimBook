@@ -3,7 +3,7 @@ import css from "./HeartPopup.style";
 import Animated,{withSpring,withSequence,useAnimatedStyle,useDerivedValue,interpolate,withDelay,withTiming} from "react-native-reanimated";
 import {SvgXml} from "react-native-svg";
 import {heart0} from "assets";
-import {minorColor} from "css";
+import {majorColor} from "css";
 
 
 export default function HeartPopup(props){
@@ -15,7 +15,7 @@ export default function HeartPopup(props){
     }));
     return (
         <Animated.View style={[css.heartpopup,style]}>
-            <SvgXml {...css.icon} xml={heart0(minorColor)}/>
+            <SvgXml {...css.icon} xml={heart0(majorColor)}/>
         </Animated.View>
     )
 }

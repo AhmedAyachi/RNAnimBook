@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border,mainColor,minorColor} from "css";
+import {rem,border,mainColor,majorColor} from "css";
  
 
 const {radius,coef}={
@@ -12,7 +12,7 @@ const {radius,coef}={
         justifyContent:"center",
         alignItems:"center",
         borderRadius:radius,
-        ...border(0.2*rem,"solid",minorColor),
+        ...border(0.2*rem,"solid",majorColor),
     },
     prisoner:{
         position:"absolute",

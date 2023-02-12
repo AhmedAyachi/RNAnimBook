@@ -31,4 +31,6 @@ export {default as img7} from "./Images/Img_7.jpg";
 export {default as img9} from "./Images/Img_9.png";
 
 //Svgs:
+export {default as trash0} from "./Svgs/Trash_0";
+export {default as check0} from "./Svgs/Check_0";
 export {default as heart0} from "./Svgs/Heart_0";
