@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border,mainColor,minorColor} from "css";
+import {rem,border,mainColor,majorColor} from "css";
 
 
 const css=StyleSheet.create({
@@ -8,11 +8,11 @@ const css=StyleSheet.create({
         height:2*rem,
         overflow:"hidden",
         borderRadius:0.35*rem,
-        ...border(1,"solid",minorColor),
+        ...border(2,"solid",mainColor),
     },
     progressbar:{
         height:"100%",
-        backgroundColor:mainColor,
+        backgroundColor:majorColor,
     },
 });
 

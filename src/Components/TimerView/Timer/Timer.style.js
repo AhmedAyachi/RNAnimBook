@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {mainColor,backgroundColor,minorColor,rem} from "css";
+import {mainColor,backgroundColor,majorColor,rem} from "css";
 
 
 const css=StyleSheet.create({
@@ -24,7 +24,7 @@ const css=StyleSheet.create({
     percentage:{
         height:"100%",
         fontSize:5*rem,
-        color:minorColor,
+        color:majorColor,
         alignSelf:"center",
         textAlignVertical:"center",
     },

@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,vw,mainColor,minorColor,backgroundColor} from "css";
+import {rem,vw,mainColor,majorColor,backgroundColor} from "css";
 
 
 const css=Object.assign(StyleSheet.create({
@@ -21,7 +21,7 @@ const css=Object.assign(StyleSheet.create({
         color:backgroundColor,
     },
 }),{
-    colors:[mainColor,minorColor],
+    colors:[mainColor,majorColor],
 });
 
 export default css;

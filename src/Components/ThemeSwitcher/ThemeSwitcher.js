@@ -2,7 +2,7 @@ import React from "react";
 import {Switch} from "react-native";
 import css from "./ThemeSwitcher.style";
 import Animated from "react-native-reanimated";
-import {mainColor,minorColor} from "css";
+import {mainColor,majorColor} from "css";
 import * as H from "./Hooks";
 
 
@@ -22,7 +22,7 @@ export default function ThemeSwitcher(props){
 }
 
 const statics={
-    thumbColors:[mainColor,minorColor],
+    thumbColors:[mainColor,majorColor],
     track:{
         false:"rgba(0,0,0,0.1)",
         true:"rgba(255,141,30,0.5)",

@@ -1,13 +1,13 @@
 import React from "react";
 import {createDrawerNavigator} from "@react-navigation/drawer";
-import {AboutScreen,ComponentScreen,HomeScreen} from "routes";
+import {AboutScreen,ComponentScreen,HomeScreen} from "screens";
 import * as components from "components";
-import {backgroundColor} from "css";
+import {backgroundColor,mainColor} from "css";
 
 
 export default function DrawerNavigator(props){
     return (
-        <Navigator screenOptions={getOptions}  initialRouteName="home">
+        <Navigator screenOptions={getOptions} initialRouteName="home">
             <Screen name="home" component={HomeScreen}/>
             {Object.keys(components).map(key=>(
                 <Screen 
@@ -27,7 +27,8 @@ const getOptions=({route:{name}})=>{
         title,
         headerTitle:title,
         headerStyle:{
-            backgroundColor,
+            //backgroundColor,
         },
+        drawerActiveTintColor:mainColor,
     };
 };
