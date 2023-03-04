@@ -43,7 +43,7 @@ const styles={
         height,
         backgroundColor:height.interpolate({
             inputRange:[height._value,containerHeight],
-            outputRange:[mainColor,majorColor],
+            outputRange:[mainColor,"#161726"],
         }),
         opacity:height.interpolate({
             inputRange:[height._value,containerHeight],
