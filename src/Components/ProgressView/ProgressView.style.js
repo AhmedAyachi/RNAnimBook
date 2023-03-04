@@ -8,11 +8,11 @@ const css=StyleSheet.create({
         height:2*rem,
         overflow:"hidden",
         borderRadius:0.35*rem,
-        ...border(1,"solid",majorColor),
+        ...border(2,"solid",mainColor),
     },
     progressbar:{
         height:"100%",
-        backgroundColor:mainColor,
+        backgroundColor:majorColor,
     },
 });
 

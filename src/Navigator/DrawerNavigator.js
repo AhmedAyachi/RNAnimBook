@@ -7,7 +7,7 @@ import {backgroundColor,mainColor} from "css";
 
 export default function DrawerNavigator(props){
     return (
-        <Navigator screenOptions={getOptions} initialRouteName="home">
+        <Navigator screenOptions={getOptions} initialRouteName="about">
             <Screen name="home" component={HomeScreen}/>
             {Object.keys(components).map(key=>(
                 <Screen 

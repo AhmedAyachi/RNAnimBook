@@ -1,10 +1,10 @@
 import {StyleSheet} from "react-native";
-import {rem,border,mainColor,majorColor} from "css";
+import {rem,border,minorColor,majorColor} from "css";
  
 
 const {radius,coef}={
     radius:15*rem,
-    coef:3.5,
+    coef:6,
 },css=StyleSheet.create({
     prisonerview:{
         width:radius*2,
@@ -19,7 +19,7 @@ const {radius,coef}={
         width:radius/coef,
         height:radius/coef,
         borderRadius:radius,
-        backgroundColor:mainColor,
+        backgroundColor:minorColor,
     },
 });
 

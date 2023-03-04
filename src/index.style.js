@@ -1,16 +1,17 @@
 import {Dimensions} from "react-native";
 import {useFonts} from "expo-font";
-import {princesssofia,squadaone,dynapuff,cabin,anton} from "assets";
+import {parisienne,princesssofia,squadaone,dynapuff,cabin,anton} from "assets";
 
 
 export const mainFont="cabin";
 export const mainColor="#532d6f";
-export const majorColor="#161726";
-export const backgroundColor="#ddd9ff";
+export const majorColor="#bface2";
+export const minorColor="#ffe9b1";
+export const backgroundColor="#655DBB";
 
 export const useCustomFonts=()=>{
     const [loaded]=useFonts({
-        princesssofia,squadaone,dynapuff,cabin,anton,
+        parisienne,princesssofia,squadaone,dynapuff,cabin,anton,
     });
     return loaded;
 }
