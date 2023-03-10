@@ -27,9 +27,9 @@ export default function AboutScreen(props){
                 </View>
             </View>
             <View style={css.row1}>
-                <SvgFromXml {...css.image} xml={tabler}/>
-                <Image style={[css.image,{width:0.5*css.image.width,height:0.5*css.image.height}]} source={cordova}/>
-                <SvgFromXml {...css.image} xml={svgrepo}/>
+                {[tabler,svgrepo].map((icon,i)=>(
+                    <SvgFromXml key={"icon"+i} {...css.image} xml={icon}/>
+                ))}
             </View>
         </ScreenView>
     )
