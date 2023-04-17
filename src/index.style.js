@@ -7,6 +7,7 @@ export const mainFont="cabin";
 export const mainColor="#532d6f";
 export const majorColor="#bface2";
 export const minorColor="#ffe9b1";
+export const textColor="white";
 export const backgroundColor="#655DBB";
 
 export const useCustomFonts=()=>{

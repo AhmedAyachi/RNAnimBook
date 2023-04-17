@@ -8,7 +8,10 @@ import {backgroundColor,mainColor} from "css";
 export default function DrawerNavigator(props){
     return (
         <Navigator screenOptions={getOptions} initialRouteName="home">
-            <Screen name="home" component={HomeScreen}/>
+            <Screen 
+                name="home" //component={HomeScreen}
+                children={()=><ComponentScreen name="OnboardingView" component={components.OnboardingView}/>}
+            />
             {Object.keys(components).map(key=>(
                 <Screen 
                     key={key} name={key} 
