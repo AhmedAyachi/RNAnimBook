@@ -2,16 +2,13 @@ import React from "react";
 import {createDrawerNavigator} from "@react-navigation/drawer";
 import {AboutScreen,ComponentScreen,HomeScreen} from "screens";
 import * as components from "components";
-import {backgroundColor,mainColor} from "css";
+import {backgroundColor,mainColor} from "stylesheet";
 
 
 export default function DrawerNavigator(props){
     return (
         <Navigator screenOptions={getOptions} initialRouteName="home">
-            <Screen 
-                name="home" //component={HomeScreen}
-                children={()=><ComponentScreen name="OnboardingView" component={components.OnboardingView}/>}
-            />
+            <Screen name="home" component={HomeScreen}/>
             {Object.keys(components).map(key=>(
                 <Screen 
                     key={key} name={key} 

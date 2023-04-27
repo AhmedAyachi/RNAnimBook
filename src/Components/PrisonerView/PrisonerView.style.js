@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border,minorColor,majorColor} from "css";
+import {rem,border,minorColor,majorColor} from "stylesheet";
  
 
 const {radius,coef}={

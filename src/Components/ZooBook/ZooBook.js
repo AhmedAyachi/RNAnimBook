@@ -4,7 +4,7 @@ import css from "./ZooBook.style";
 import {perrot0,snake0,cat0,bovid0,eagle0,horse0,owl0} from "assets";
 import IlluCard from "./IlluCard/IlluCard";
 import IlluBackdrop from "./IlluBackdrop/IlluBackdrop";
-import {vw} from "css";
+import {vw} from "stylesheet";
 
 
 export default function ZooBook(){

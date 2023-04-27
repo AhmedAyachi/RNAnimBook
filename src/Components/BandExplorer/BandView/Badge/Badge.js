@@ -2,7 +2,7 @@ import React from "react";
 import {View,Text,Animated,TouchableWithoutFeedback as TWF} from "react-native";
 import css from "./Badge.style";
 import {FontAwesome} from "@expo/vector-icons"; 
-import {vh,mainColor,majorColor} from "css";
+import {vh,mainColor,majorColor} from "stylesheet";
 import * as H from "./Hooks";
 
 

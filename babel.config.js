@@ -10,7 +10,7 @@ module.exports=function(api) {
                     "resources":"./src/Resources",
                     "actions":"./src/Store/Actions.js",
                     "screens":"./src/Screens",
-                    "css":"./src/index.style.js",   
+                    "stylesheet":"./src/index.style.js",
                 }
             }],
             "react-native-reanimated/plugin",

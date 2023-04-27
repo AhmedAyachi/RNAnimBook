@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border} from "css";
+import {rem,border} from "stylesheet";
 
 
 export const css=StyleSheet.create({
@@ -17,6 +17,7 @@ export const css=StyleSheet.create({
     },
     topics:{
         marginTop:10*rem,
+        ...border(1,"solid","red"),
     },
 });
 

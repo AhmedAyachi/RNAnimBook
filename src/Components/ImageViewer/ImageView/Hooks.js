@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import {useAnimatedRef,useAnimatedGestureHandler,useSharedValue,useAnimatedStyle,withTiming,useDerivedValue,withSpring} from "react-native-reanimated";
-//import {width,height} from "css";
+//import {width,height} from "stylesheet";
 
 
 export const useZoomGesture=(origin)=>{

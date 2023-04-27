@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {Easing,interpolate,interpolateColor,runOnJS,useAnimatedGestureHandler,useAnimatedStyle,useSharedValue,withTiming} from "react-native-reanimated";
-import {vw} from "css";
+import {vw} from "stylesheet";
 
 
 export const useUnMountAnim=()=>{

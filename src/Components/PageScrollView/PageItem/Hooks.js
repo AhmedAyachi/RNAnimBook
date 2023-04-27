@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import {useAnimatedStyle,interpolate,Extrapolate} from "react-native-reanimated";
-import {width,height} from "css";
+import {width,height} from "stylesheet";
 import css from "./PageItem.style";
  
 

@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {} from "css";
+import {} from "stylesheet";
 
 
 const css=StyleSheet.create({

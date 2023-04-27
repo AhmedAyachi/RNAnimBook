@@ -2,7 +2,7 @@ import React from "react";
 import {Switch} from "react-native";
 import css from "./ThemeSwitcher.style";
 import Animated from "react-native-reanimated";
-import {mainColor,majorColor} from "css";
+import {mainColor,majorColor} from "stylesheet";
 import * as H from "./Hooks";
 
 

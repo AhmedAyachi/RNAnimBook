@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border} from "css";
+import {rem,border} from "stylesheet";
 
 
 const css=StyleSheet.create({

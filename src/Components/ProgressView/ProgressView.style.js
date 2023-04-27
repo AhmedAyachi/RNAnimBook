@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {rem,border,mainColor,majorColor} from "css";
+import {rem,border,mainColor,majorColor} from "stylesheet";
 
 
 const css=StyleSheet.create({

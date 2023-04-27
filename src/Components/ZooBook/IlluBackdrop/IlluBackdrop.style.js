@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {inset} from "css";
+import {inset} from "stylesheet";
 
 
 const css=StyleSheet.create({
