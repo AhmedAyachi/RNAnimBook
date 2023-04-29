@@ -2,10 +2,8 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "expo start",
+    "test": "expo start --no-dev",
     "restart": "expo start -c",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
     "eject": "expo eject"
   },
   "dependencies": {
@@ -26,7 +24,8 @@
     "react-redux": "^8.0.2"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0"
+    "@babel/core": "~7.9.0",
+    "babel-plugin-transform-define": "^2.1.0"
   },
   "private": true
 }

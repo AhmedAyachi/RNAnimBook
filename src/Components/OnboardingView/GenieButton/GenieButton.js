@@ -7,7 +7,9 @@ import Animated from "react-native-reanimated";
 export default function GenieButton(props){
     const {}=props;
     return (
-        <TouchableOpacity style={css.geniebutton}>
+        <TouchableOpacity style={css.geniebutton} onPress={()=>{
+            alert(JSON.stringify([isDevEnv,isProdEnv]));
+        }}>
             <Animated.View style={[css.geniebutton,{bottom:undefined}]}>
                 
             </Animated.View>

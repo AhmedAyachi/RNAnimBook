@@ -1,12 +1,14 @@
 import {StyleSheet} from "react-native";
-import {rem,textColor,mainFont,} from "stylesheet";
+import {rem,textColor,mainFont,border} from "stylesheet";
 
 
 const css=StyleSheet.create({
     topicview:{
+        width:"50%",
         justifyContent:"flex-start",
         alignItems:"center",
-        backgroundColor:"red",
+        ...border(1,"solid","red"),
+        overflow:"hidden",
     },
     image:{
         width:15*rem,

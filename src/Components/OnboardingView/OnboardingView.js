@@ -14,7 +14,7 @@ export default function OnboardingView(props){
             <View style={css.foreground}>
                 <HeaderView/>
                 <ScrollView 
-                    style={css.topics} 
+                    style={css.topics} contentContainerStyle={css.container}
                     horizontal
                 >
                     {statics.topics.map(topic=>(
