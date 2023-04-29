@@ -42,8 +42,8 @@ export default function OnboardingView(props){
             </Animated.ScrollView>
             <GenieButton 
                 scrollLeft={scrollLeft}
-                from={"red"/* statics.topics[index].color */}
-                to={statics.topics[statics.topics.length-index-1].color}
+                from={statics.topics[index+1].color}
+                to={statics.topics[index].color}
                 /* onMidReached={()=>{
                     console.log("onMidReached called");
                     const topicsEl=scrollRef.current;

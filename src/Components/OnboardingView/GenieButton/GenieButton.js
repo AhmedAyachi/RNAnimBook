@@ -1,34 +1,30 @@
 import React,{useRef} from "react";
 import {TouchableOpacity} from "react-native";
 import css from "./GenieButton.style";
-import Animated,{useAnimatedStyle, useSharedValue,withTiming,runOnJS} from "react-native-reanimated";
+import Animated,{useAnimatedStyle,interpolate, Extrapolation} from "react-native-reanimated";
+import {vw} from "stylesheet";
 
 
 export default function GenieButton(props){
-    const {from,to,onMidReached}=props;
+    const {from,to,scrollLeft,onClick}=props;
     const btnRef=useRef();
-    const scale=useSharedValue(1);
     const style=useAnimatedStyle(()=>{
-        const mid=statics.toscale/2;
-        const value=scale.value<mid?scale.value:(statics.toscale-scale.value);
-        const reversed=scale.value>mid;
-        onMidReached&&runOnJS(onMidReached)();
+        const reversed=Math.round(scrollLeft.value/(100*vw))%2;
+        let scale=interpolate(scrollLeft.value,[0,50*vw,100*vw],[1,250,1],Extrapolation.CLAMP);
+        const translateX=(1-1/scale)*(css.geniebutton.width/2);
         return {
             backgroundColor:reversed?to:from,
             transform:[
-                {scale:value},
+                {scale},
                 {scaleX:reversed?-1:1},
-                {translateX:(1-1/value)*(css.geniebutton.width/2)},
+                {translateX:translateX+1},
             ],
         }
     },[from,to]);
     return (
         <TouchableOpacity 
             activeOpacity={0.5}
-            onPressIn={()=>{
-                scale.value=1;
-                scale.value=withTiming(statics.toscale-1,{duration:1000});
-            }}
+            onPressIn={onClick}
         >
             <Animated.View ref={btnRef} style={[css.geniebutton,style,props.style]}/>
         </TouchableOpacity>
