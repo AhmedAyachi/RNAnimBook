@@ -6,7 +6,7 @@ const css=StyleSheet.create({
     homescreen:{
         justifyContent:"flex-start",
         alignItems:"stretch",
-        paddingHorizontal:1*rem,
+        //paddingHorizontal:1*rem,
     },
     row0:{
         maxWidth:"100%",

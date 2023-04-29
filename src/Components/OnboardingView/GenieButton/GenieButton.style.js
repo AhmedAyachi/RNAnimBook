@@ -9,8 +9,8 @@ const css=StyleSheet.create({
         height:8*rem,
         alignSelf:"center",
         borderRadius:5*rem,
-        bottom:"10%",
-        backgroundColor:mainColor,
+        bottom:7*rem,
+        zIndex:3,
     },
 });
 
