@@ -1,11 +1,11 @@
 import {StyleSheet} from "react-native";
-import {rem,textColor,mainFont,border,vw} from "stylesheet";
+import {rem,textColor,mainFont} from "stylesheet";
 
 
 const css=StyleSheet.create({
     topicview:{
-        width:100*vw,
-        flex:1,
+        width:"100%",
+        height:"100%",
         justifyContent:"flex-start",
         alignItems:"center",
         overflow:"hidden",

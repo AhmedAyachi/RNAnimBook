@@ -1,59 +1,36 @@
-import React,{useState,useMemo, useRef} from "react";
-import {View,ScrollView} from "react-native";
+import React, { useEffect } from "react";
+import {View} from "react-native";
 import css from "./OnboardingView.style";
 import HeaderView from "./HeaderView/HeaderView";
 import TopicView from "./TopicView/TopicView";
 import GenieButton from "./GenieButton/GenieButton";
-import Animated,{useAnimatedScrollHandler,useAnimatedStyle,useSharedValue,interpolateColor} from "react-native-reanimated";
+import Animated,{runOnJS,withTiming} from "react-native-reanimated";
 import {perrot0,eagle0} from "assets";
-import { vw } from "stylesheet";
+import * as H from "./Hooks";
 
 
 export default function OnboardingView(props){
     const {}=props;
-    const [index,setIndex]=useState(0);
-    const scrollLeft=useSharedValue(0);
-    const scrollHandler=useAnimatedScrollHandler(event=>{
-        scrollLeft.value=event.contentOffset.x;
-    });
-    const btnStyle=useAnimatedStyle(()=>{
-        const {topics}=statics,width=100*vw;
-        return {
-            backgroundColor:interpolateColor(
-                scrollLeft.value,
-                topics.map((_,i)=>width*i),
-                topics.map((_,i)=>topics[topics.length-i-1].color),
-            ),
-        };
-    });
-    const scrollRef=useRef();
+    const {transition,index,setIndex,topicsElStyle,btnStyle}=H.useTransitionAnim(statics.topics);
+    /* useEffect(()=>{
+        console.log("index",index);
+    },[index]); */
     return (
         <View style={[css.onboardingview,props.style]}>
             <HeaderView/>
-            <Animated.ScrollView 
-                ref={scrollRef} style={css.topics}  
-                horizontal scrollEnabled={true}
-                onScroll={scrollHandler}
-                showsHorizontalScrollIndicator={false}
-            >
+            <Animated.View style={[css.topics,topicsElStyle]}>
                 {statics.topics.map(topic=>(
                     <TopicView key={topic.description} {...topic}/>
                 ))}
-            </Animated.ScrollView>
+            </Animated.View>
             <GenieButton 
-                scrollLeft={scrollLeft}
-                from={statics.topics[index+1].color}
-                to={statics.topics[index].color}
-                /* onMidReached={()=>{
-                    console.log("onMidReached called");
-                    const topicsEl=scrollRef.current;
-                    topicsEl?.scrollTo({x:(index+1)*100*vw});
-                }} */
-                //style={btnStyle}
-                /* onClick={()=>{
-                    const topicsEl=scrollRef.current;
-                    topicsEl.scrollTo({x:100*vw});
-                }} */
+                style={btnStyle}
+                onClick={()=>{
+                    transition.value=withTiming(100*(index+1),{duration:2000},()=>{
+                        const i=index+1;
+                        runOnJS(setIndex)((i<statics.topics.length)?i:0);
+                    });
+                }}
             />
         </View>
     )
@@ -70,6 +47,11 @@ const statics={
             image:eagle0,
             description:"choose your interests",
             color:"#f1b0d0",
+        },
+        {
+            image:eagle0,
+            description:"ready to shine",
+            color:"#cc0000",
         },
     ],
 }

@@ -10,6 +10,7 @@ export const css=StyleSheet.create({
     topics:{
         width:"100%",
         flex:1,
+        flexDirection:"row",
         //overflow:"hidden",
     },
 });
