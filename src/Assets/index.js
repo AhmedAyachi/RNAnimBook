@@ -19,7 +19,7 @@ export {default as snake0} from "./Images/Snake_0.png";
 export {default as diewoord0} from "./Images/DieWoord_0.png";
 export {default as worldsaxophone0} from "./Images/WorldSaxophoneQuartet_0.jpg";
 export {default as yearsnadyears0} from "./Images/YearsAndYears_0.jpeg";
-export {default as tension} from "./Images/tension_0.jpg";
+export {default as tension} from "./Images/Tension_0.jpg";
 export {default as sos} from "./Images/Sos_0.png";
 export {default as houseofzef} from "./Images/HouseOfZef_0.jpg";
 export {default as palosanto} from "./Images/PaloSanto_0.png";
