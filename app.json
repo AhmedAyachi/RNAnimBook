@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoApp",
-    "slug": "ExpoApp",
+    "name": "RNAnimBook",
+    "slug": "RNAnimBook",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/Assets/Images/icon.png",
@@ -13,23 +13,37 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
+      "package": "com.rnanimbook.app",
       "adaptiveIcon": {
         "foregroundImage": "./src/Assets/Images/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
+    "ios": {
+      "bundleIdentifier": "com.rnanimbook.app",
+      "supportsTablet": true
+    },
     "web": {
       "favicon": "./src/Assets/Images/favicon.png"
     },
     "plugins": [
-      "expo-font"
-    ]
+      "expo-font",
+      ["expo-build-properties",{
+        "android": {
+          "compileSdkVersion": 31,
+          "targetSdkVersion": 31,
+          "buildToolsVersion": "31.0.0"
+        },
+        "ios": {
+          "deploymentTarget": "13.4"
+        }
+      }]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1b0a681e-bcc6-4b04-a7f4-85e281a2dca3"
+      }
+    }
   }
 }
